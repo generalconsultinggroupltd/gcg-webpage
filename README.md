@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# General Consulting Group — website
 
-## Getting Started
+Redesign of [generalsconsultinggroups.com](https://generalsconsultinggroups.com) built with Next.js (App Router) and Tailwind CSS v4.
 
-First, run the development server:
+## Getting started
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `app/[lang]/` — public routes, once per language (`/en`, `/fr`, `/ar`, `/sw`, `/pt`): home, about, services (+ consulting, import-export, representation), partners, gallery, contact and the legal documents (`/[legal]`). Its layout is the root layout of the public site (`<html lang dir>`, header, footer).
+- `proxy.ts` — sends unprefixed URLs (`/`, `/about`) to the visitor's language: their earlier choice (cookie), else their browser language, else English.
+- `app/admin/` — password-protected Google Analytics dashboard (`/admin`, not indexed).
+- `components/` — reusable UI (`ui/`), layout (header, footer, language switcher), page sections (`home/`, `services/`, `gallery/`, `contact/`), `analytics/` (GA4 tag + cookie banner) and `admin/` (dashboard and charts).
+- `lib/` — site configuration and media lists (`site.ts`, `services.ts`, `projects.ts`, `partners.ts`, `gallery.ts`, `legal.ts`), `api.ts`, `analytics.ts`, `adminAuth.ts`, `fonts.ts`.
+- `lib/i18n/` — languages (`config.ts`), one dictionary per language (`dictionaries/`), the legal documents per language (`legal/`), and helpers (`server.ts` for Server Components, `format.ts` / `rich.tsx` for placeholders).
+- `public/` — logo, design reference, partner logos and gallery media.
 
-## Learn More
+## Backend
 
-To learn more about Next.js, take a look at the following resources:
+The Go API lives in `../backend` (contact form + statistics). Point the site at it:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```dotenv
+NEXT_PUBLIC_API_URL=http://localhost:8080
+NEXT_PUBLIC_GA_MEASUREMENT_ID=G-XXXXXXXXXX
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Analytics
 
-## Deploy on Vercel
+- **Tag**: Google Analytics 4, loaded only after the visitor accepts the cookie banner (nothing is sent to Google before). "Cookie settings" in the footer reopens the banner. The tag is silent on `/admin` and on localhost. Leave `NEXT_PUBLIC_GA_MEASUREMENT_ID` empty to turn off both tag and banner.
+- **Homepage "Our Reach"**: all-time visitors, countries and last-30-day visitors, read from `/api/site-stats` and regenerated hourly. Hidden until analytics is configured and has data.
+- **`/admin`**: live visitors, 7/28/90-day trends, top pages, countries, sources and devices. Password = `ADMIN_PASSWORD` in the backend.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Setup steps for the Google Analytics property: see `../backend/README.md`.
+If a Content-Security-Policy is added later, allow `https://www.googletagmanager.com` (script) and `https://*.google-analytics.com` (connect).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Translations
+
+All visible text lives in `lib/i18n/dictionaries/{en,fr,ar,sw,pt}.ts`. English (`en.ts`) is the source and defines the shape: add or rename a string there and TypeScript flags every language that is missing it. Keep `{placeholders}` as they are.
+
+- **Arabic** pages are right-to-left (`dir="rtl"`) and use Noto Sans / Noto Naskh Arabic. Use logical Tailwind classes (`ps-`, `ms-`, `start-`, `end-`, `border-s`, `text-start`) rather than `left`/`right` so layouts mirror correctly.
+- **Legal documents** are in `lib/i18n/legal/`. Translated versions show a note that the English text prevails; have them checked by a lawyer or sworn translator before relying on them.
+- The `/admin` dashboard is not translated (English only).
+
+## Pending work
+
+- **Footer social links**: fill in the real URLs in `lib/site.ts`.
