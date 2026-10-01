@@ -78,9 +78,9 @@ Send these whenever you have them. Each one unblocks the item in brackets.
 | **"Our Reach" figures** on the home page — real visitors and countries from Google Analytics, refreshed hourly; hidden until there is data                                                                     | Home page                                               |
 | **Statistics dashboard** at `/admin` (password-protected, not indexed): live visitors, 7/28/90-day trends, top pages, countries, traffic sources, devices                                                      | `/admin`                                                |
 | **Backend** moved into this project as `backend/` — contact form + statistics API. It now starts without Mailjet keys (the form answers "not available" until they are set)                                    | `../backend`                                            |
-| **Contact email** changed everywhere to generalconsultinggroupltd@gmail.com (contact page, privacy policy, search data) | `lib/site.ts`, legal texts |
-| **Translations**: the whole site in English, French, Arabic (right-to-left), Swahili and Portuguese, with a URL per language (`/fr/about`…), automatic language detection, and language links for Google | Site-wide |
-| **Sharper project screenshots** under "Our Work": shown whole in a browser frame at their real proportions, served at higher quality | Home page |
+| **Contact email** changed everywhere to generalconsultinggroupltd@gmail.com (contact page, privacy policy, search data)                                                                                        | `lib/site.ts`, legal texts                              |
+| **Translations**: the whole site in English, French, Arabic (right-to-left), Swahili and Portuguese, with a URL per language (`/fr/about`…), automatic language detection, and language links for Google       | Site-wide                                               |
+| **Sharper project screenshots** under "Our Work": shown whole in a browser frame at their real proportions, served at higher quality                                                                           | Home page                                               |
 
 ---
 
@@ -145,14 +145,14 @@ Send these whenever you have them. Each one unblocks the item in brackets.
 
 ### 6. Polish and accessibility
 
-| #   | Recommendation             | Status                                                                                  |
-| --- | -------------------------- | --------------------------------------------------------------------------------------- |
-| 6.1 | Real social links          | 🟡 Dead icons hidden; send URLs                                                         |
+| #   | Recommendation             | Status                                                                                                       |
+| --- | -------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| 6.1 | Real social links          | 🟡 Dead icons hidden; send URLs                                                                              |
 | 6.2 | Translations               | 🟡 Done: English, French, Arabic (right-to-left), Swahili, Portuguese. Needs proofreading by native speakers |
-| 6.3 | Accessibility pass         | 🟡 Skip link, focus rings and reduced motion done; a full contrast audit is still to do |
-| 6.4 | Replace stock photos       | 📝 Need real photos                                                                     |
-| 6.5 | Favicon from the logo      | ✅ Done                                                                                 |
-| 6.6 | Smooth scroll + animations | ✅ Done                                                                                 |
+| 6.3 | Accessibility pass         | 🟡 Skip link, focus rings and reduced motion done; a full contrast audit is still to do                      |
+| 6.4 | Replace stock photos       | 📝 Need real photos                                                                                          |
+| 6.5 | Favicon from the logo      | ✅ Done                                                                                                      |
+| 6.6 | Smooth scroll + animations | ✅ Done                                                                                                      |
 
 ---
 
@@ -161,3 +161,80 @@ Send these whenever you have them. Each one unblocks the item in brackets.
 1. **Before launch:** 4.3 (HTTPS API), confirm the domain, lawyer review of 4.1, 5.4, create the GA4 property and set the admin password (5.5).
 2. **Quick credibility wins:** a testimonial from Step for the Future (1.3), registration details (1.4), confirm the founder details (1.1).
 3. **Next build:** auto-reply (3.1) and the company profile PDF (2.4). Proofread the translations (6.2).
+
+# New updates
+
+1. address of the company in cameroon: Adresse AKWA DOUALA CAMEROUN
+2. Add the following languages to the website: espagnole, allemand,chinois,russe,italien japonais
+3. replaces services with "NOS BRANCHES" (this is french but adapt it for all the other languages)
+4. New text to replace the previous with:
+   <
+   QUI EST GCG ? »
+   Nouveau texte
+   Un groupe africain tourné vers l'international
+
+General Consulting Group est un groupe de conseil, de développement commercial et d'investissement basé en Afrique, avec une présence au Cameroun et au Rwanda et un réseau international de partenaires.
+
+Nous aidons nos clients à identifier les opportunités, entrer sur de nouveaux marchés, développer leurs activités et transformer leurs projets en résultats concrets.>
+
+<
+General Consulting Group propose des solutions de conseil stratégique, d'innovation et de développement international pour Développer les entreprises. Connecter les marchés. Créer de nouvelles opportunités.
+
+General Consulting Group accompagne les entreprises, institutions et investisseurs dans leur développement en Afrique et à l'international, du conseil stratégique à l'exécution.
+
+Conseil • Développement commercial • Commerce international • Technologie • Représentation>
+
+<
+Leadership
+Patrick Junior Njambe II
+Founder & Managing Director
+À la tête de General Consulting Group, Patrick Junior Njambe II porte une vision entrepreneuriale fondée sur le développement des entreprises, la création de partenariats stratégiques et la connexion des marchés africains aux opportunités internationales.
+Entrepreneur, dirigeant et consultant, il accompagne le développement de GCG avec une approche orientée vers la stratégie, le développement commercial, le commerce international, la représentation d’entreprises et la création de nouvelles opportunités d’affaires.
+Son parcours et son expérience dans différents environnements africains lui permettent de comprendre les réalités des marchés locaux tout en développant des perspectives internationales. Sa vision est de construire un groupe africain capable de connecter les entreprises, les investisseurs, les partenaires et les marchés au-delà des frontières.
+Vision
+« Construire un groupe africain capable de créer des connexions, développer des opportunités et accompagner durablement les entreprises au-delà des frontières. »
+Domaines d’expertise
+• Conseil stratégique et développement d’entreprise
+• Développement commercial et recherche d’opportunités
+• Commerce international et mise en relation d’affaires
+• Représentation et développement de marchés
+• Partenariats stratégiques et expansion internationale
+• Technologies et solutions numériques à travers les activités du Groupe
+Implantation & ouverture internationale
+General Consulting Group développe ses activités depuis le Cameroun et le Rwanda, avec une ambition de croissance et de développement de son réseau à travers l’Afrique et à l’international.
+À travers ses différentes activités et entreprises, GCG construit progressivement un écosystème capable de relier entreprises, marchés, technologies, talents, produits et opportunités.
+Le mot du dirigeant
+« Je crois que l’Afrique ne manque ni de talents, ni d’idées, ni d’opportunités. Elle a surtout besoin de connexions solides, de stratégies adaptées et de partenaires capables de transformer les idées en résultats. C’est cette conviction qui guide la construction de General Consulting Group. »
+Patrick Junior Njambe II
+Founder & Managing Director — General Consulting Group
+
+>
+
+<
+Pourquoi choisir General Consulting Group ?
+
+Une présence en Afrique centrale et en Afrique de l’Est
+General Consulting Group SARL au Cameroun et General Consulting Group Ltd au Rwanda sont dirigés par leur fondateur, Patrick Junior Njambe II. Cette organisation permet à nos clients de bénéficier d’un interlocuteur clairement identifié, d’une prise de décision efficace et d’une vision cohérente entre deux marchés stratégiques du continent africain.
+Un groupe juridiquement établi
+Nos entités sont officiellement enregistrées dans leurs pays respectifs. Au Cameroun, General Consulting Group SARL est immatriculée sous le RCCM RC/DLA/2022/B/4336. Au Rwanda, General Consulting Group Ltd est enregistrée auprès du Rwanda Development Board sous le code 122882138. Nos relations commerciales s’appuient ainsi sur des structures légalement constituées, identifiables et responsables de leurs engagements.
+Une expertise qui accompagne vos projets de bout en bout
+Notre groupe réunit plusieurs domaines complémentaires : conseil international, recrutement et mobilité professionnelle, commerce international, technologies de l’information, immobilier, gestion de talents et accompagnement des entreprises et investisseurs.
+Cette complémentarité permet à nos clients de centraliser plusieurs besoins auprès d’un même partenaire, notamment lors d’une implantation ou d’un développement en Afrique.
+Une connaissance concrète des marchés africains
+Notre présence au Cameroun et au Rwanda nous permet d’évoluer au plus près des réalités administratives, commerciales et culturelles de l’Afrique centrale et de l’Afrique de l’Est.
+Nous accompagnons ainsi les entreprises et investisseurs qui souhaitent identifier des partenaires, accéder à de nouveaux marchés, trouver des talents ou développer leurs activités dans ces régions.
+L’intégrité comme fondement de nos relations
+Notre approche repose sur quatre principes : excellence, intégrité, innovation et partenariat durable.
+Nous privilégions la construction de relations professionnelles solides plutôt que les opérations ponctuelles. Nous nous engageons avec clarté, évaluons les possibilités avec réalisme et communiquons de manière transparente sur ce qui peut être réalisé avant de prendre un engagement.>
+
+5. Import export:
+   COMMERCE INTERNATIONAL
+
+Import / Export
+Sourcing international
+Recherche de fournisseurs
+Mise en relation commerciale
+Logistique et coordination
+Développement de marchés
+
+# All these have been added. Remaining the claude code recommendation

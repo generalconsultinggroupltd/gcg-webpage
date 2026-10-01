@@ -17,7 +17,12 @@ function remember(lang: Locale) {
  * language: a full page load is what switches <html lang> and dir (Arabic is
  * right-to-left), and it gives search engines a path to every version.
  */
-export function LanguageSwitcher({ align = "end" }: { align?: "start" | "end" }) {
+export function LanguageSwitcher({
+  menuPosition = "end-0 mt-2",
+}: {
+  /** Placement classes for the dropdown; the footer opens it upwards. */
+  menuPosition?: string;
+}) {
   const { lang, dict } = useLocale();
   const rest = stripLocale(usePathname());
   const [open, setOpen] = useState(false);
@@ -63,9 +68,7 @@ export function LanguageSwitcher({ align = "end" }: { align?: "start" | "end" })
           id={menuId}
           role="menu"
           aria-label={dict.header.languages}
-          className={`absolute z-50 mt-2 w-44 overflow-hidden rounded-lg border border-white/10 bg-navy-900 py-1 shadow-card ${
-            align === "end" ? "end-0" : "start-0"
-          }`}
+          className={`absolute z-50 max-h-[70vh] w-44 overflow-y-auto rounded-lg border border-white/10 bg-navy-900 py-1 shadow-card ${menuPosition}`}
         >
           {locales.map((code) => {
             const selected = code === lang;

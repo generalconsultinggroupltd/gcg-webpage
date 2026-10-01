@@ -3,7 +3,14 @@ import { notFound } from "next/navigation";
 import { legalSlugs, type LegalBlock } from "@/lib/legal";
 import { Container } from "@/components/ui/Container";
 import { PageHero } from "@/components/ui/PageHero";
-import { defaultLocale, getDictionary, getLegalDocuments, hasLocale, type Locale } from "@/lib/i18n";
+import {
+  defaultLocale,
+  getDictionary,
+  getLegalDocuments,
+  hasLegalTranslation,
+  hasLocale,
+  type Locale,
+} from "@/lib/i18n";
 import { pageMetadata } from "@/lib/i18n/metadata";
 
 export function generateStaticParams() {
@@ -67,21 +74,27 @@ export default async function LegalPage({ params }: PageProps<"/[lang]/[legal]">
   const document = await getDocument(lang, legal);
   if (!document) notFound();
   const { legalPage } = await getDictionary(lang);
+  const translated = hasLegalTranslation(lang);
+  // Untranslated documents are shown in English, marked as such for
+  // screen readers and translation tools.
+  const documentLang = translated ? undefined : defaultLocale;
 
   return (
     <>
-      <PageHero eyebrow={document.company} title={document.title} />
+      <PageHero eyebrow={document.company} title={<span lang={documentLang}>{document.title}</span>} />
       <section className="py-16 sm:py-20">
         <Container>
-          <article className="mx-auto max-w-3xl rounded-lg bg-white p-6 shadow-card ring-1 ring-line sm:p-10">
+          <article className="mx-auto max-w-3xl rounded-lg bg-white p-6 shadow-card ring-1 ring-line [overflow-wrap:anywhere] sm:p-10">
             {lang !== defaultLocale && (
               <p className="mb-8 rounded-md bg-cream px-4 py-3 text-sm text-muted">
-                {legalPage.translationNotice}
+                {translated ? legalPage.translationNotice : legalPage.englishOnly}
               </p>
             )}
-            {document.blocks.map((block, index) => (
-              <Block key={index} block={block} />
-            ))}
+            <div lang={documentLang}>
+              {document.blocks.map((block, index) => (
+                <Block key={index} block={block} />
+              ))}
+            </div>
           </article>
         </Container>
       </section>

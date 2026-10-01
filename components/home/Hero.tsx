@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import Image from "next/image";
 import { site } from "@/lib/site";
 import { getDict } from "@/lib/i18n/server";
@@ -37,12 +38,17 @@ export async function Hero() {
 
       <Container className="relative flex min-h-[520px] flex-col justify-center py-20 sm:min-h-[600px] lg:min-h-[640px] lg:py-24">
         <div className="max-w-xl">
-          <p className="animate-fade-up text-[11px] font-semibold uppercase tracking-[0.22em] text-white">
+          <p className="animate-fade-up text-[11px] font-semibold uppercase leading-loose tracking-[0.22em] text-white">
+            {/* Five pillars wrap on phones: lines break only between them
+                (at the space), never inside one. */}
             {copy.pillars.map((pillar, index) => (
-              <span key={pillar}>
-                {index > 0 && <span className="mx-2 text-gold-500">•</span>}
-                {pillar}
-              </span>
+              <Fragment key={pillar}>
+                {index > 0 && " "}
+                <span className="whitespace-nowrap">
+                  {index > 0 && <span className="me-2 text-gold-500">•</span>}
+                  {pillar}
+                </span>
+              </Fragment>
             ))}
           </p>
           <h1
@@ -58,6 +64,12 @@ export async function Hero() {
             style={delay(240)}
           >
             {rich(copy.text, { name: <span className="text-white">{site.name}</span> })}
+          </p>
+          <p
+            className="animate-fade-up mt-3 text-sm leading-relaxed text-white/70 sm:text-base"
+            style={delay(300)}
+          >
+            {copy.text2}
           </p>
           <div className="animate-fade-up mt-8 flex flex-wrap gap-4" style={delay(360)}>
             <ButtonLink href={href("/about")}>

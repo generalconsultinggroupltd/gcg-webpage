@@ -43,7 +43,7 @@ export const services: Service[] = [
   {
     slug: "import-export",
     image: "/services/imports.jpg",
-    name: "Import & Export",
+    name: "International Trade",
     icon: "trade",
     href: "/services/import-export",
   },

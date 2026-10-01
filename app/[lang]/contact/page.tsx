@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { site } from "@/lib/site";
 import { Container } from "@/components/ui/Container";
 import { PageHero } from "@/components/ui/PageHero";
-import { MailIcon, MapPinIcon, PhoneIcon } from "@/components/ui/Icons";
+import { MailIcon, MapPinIcon, PhoneIcon, WhatsAppIcon } from "@/components/ui/Icons";
 import { ContactForm } from "@/components/contact/ContactForm";
 import { reveal } from "@/lib/motion";
 import { getDictionary, hasLocale, t } from "@/lib/i18n";
@@ -26,7 +26,7 @@ function telHref(phone: string) {
 export default async function ContactPage() {
   const { dict } = await getDict();
   const copy = dict.contact;
-  const { email, phones } = site.contact;
+  const { email, phones, whatsapp } = site.contact;
 
   return (
     <>
@@ -45,7 +45,13 @@ export default async function ContactPage() {
               </span>
               <div>
                 <h2 className="font-serif text-lg font-semibold text-navy-950">{copy.location}</h2>
-                <p className="mt-1 text-muted">{copy.address}</p>
+                <ul className="mt-1 space-y-0.5">
+                  {copy.addresses.map((address) => (
+                    <li key={address} className="text-muted">
+                      {address}
+                    </li>
+                  ))}
+                </ul>
               </div>
             </li>
             <li className="flex gap-4" {...reveal(1)}>
@@ -81,6 +87,23 @@ export default async function ContactPage() {
                     </li>
                   ))}
                 </ul>
+              </div>
+            </li>
+            <li className="flex gap-4" {...reveal(3)}>
+              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-2 border-gold-500 bg-navy-950 text-gold-400">
+                <WhatsAppIcon className="h-5 w-5" />
+              </span>
+              <div>
+                <h2 className="font-serif text-lg font-semibold text-navy-950">{copy.whatsapp}</h2>
+                <a
+                  href={whatsapp.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  dir="ltr"
+                  className="mt-1 inline-block text-muted transition-colors hover:text-gold-600"
+                >
+                  {whatsapp.display}
+                </a>
               </div>
             </li>
           </ul>

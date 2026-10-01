@@ -6,8 +6,7 @@ import type { Dictionary } from "../index";
 const pt: Dictionary = {
   meta: {
     homeTitle: "General Consulting Group — Criar valor. Gerar impacto.",
-    description:
-      "A General Consulting Group oferece soluções de consultoria estratégica, inovação e desenvolvimento internacional para ajudar empresas e instituições a alcançar os seus objetivos e a criar valor sustentável.",
+    description: "A General Consulting Group oferece soluções de consultoria estratégica, inovação e desenvolvimento internacional para desenvolver empresas, ligar mercados e criar novas oportunidades.",
     keywords: [
       "consultoria estratégica",
       "importação e exportação",
@@ -24,7 +23,7 @@ const pt: Dictionary = {
   nav: {
     home: "Início",
     about: "Sobre nós",
-    services: "Serviços",
+    services: "Áreas de negócio",
     partners: "Parceiros",
     gallery: "Galeria",
     contact: "Contacto",
@@ -45,10 +44,11 @@ const pt: Dictionary = {
     backToTop: "Voltar ao topo",
     contactUs: "Contacte-nos",
     getInTouch: "Entre em contacto",
-    allServices: "Todos os serviços",
+    allServices: "Todas as áreas",
     visitWebsite: "Visitar o site",
     opensInNewTab: "{name} (abre num novo separador)",
     close: "Fechar",
+    quote: "«{text}»",
   },
 
   footer: {
@@ -77,17 +77,24 @@ const pt: Dictionary = {
   },
 
   hero: {
-    pillars: ["Estratégia", "Inovação", "Impacto sustentável"],
+    pillars: [
+      "Consultoria",
+      "Desenvolvimento comercial",
+      "Comércio internacional",
+      "Tecnologia",
+      "Representação",
+    ],
     titleLine1: "Criar valor.",
     titleLine2: "Gerar impacto.",
-    text: "A {name} oferece soluções de consultoria estratégica, inovação e desenvolvimento internacional para ajudar empresas e instituições a alcançar os seus objetivos e a criar valor sustentável.",
+    text: "A {name} oferece soluções de consultoria estratégica, inovação e desenvolvimento internacional para desenvolver empresas, ligar mercados e criar novas oportunidades.",
+    text2: "Acompanhamos empresas, instituições e investidores no seu desenvolvimento em África e a nível internacional, da consultoria estratégica à execução.",
     discover: "Conhecer a GCG",
-    ourServices: "Os nossos serviços",
+    ourServices: "As nossas áreas de negócio",
     tagline: "África e o mundo juntos por um amanhã melhor",
   },
 
   services: {
-    eyebrow: "Os nossos serviços",
+    eyebrow: "As nossas áreas de negócio",
     title: "Soluções para um amanhã mais amplo",
     description:
       "Oferecemos uma gama diversificada de serviços pensados para apoiar o seu crescimento, facilitar oportunidades internacionais e criar valor duradouro.",
@@ -99,7 +106,7 @@ const pt: Dictionary = {
         summary: "Aconselhamento estratégico e soluções à medida para alcançar os seus objetivos.",
       },
       "import-export": {
-        name: "Importação e Exportação",
+        name: "Comércio internacional",
         summary: "Facilitar o comércio internacional e as oportunidades globais.",
       },
       representation: {
@@ -218,33 +225,75 @@ const pt: Dictionary = {
 
   about: {
     metaTitle: "Sobre nós",
-    metaDescription:
-      "Conheça a General Consulting Group: uma equipa colaborativa e orientada para resultados, que transforma ideias em resultados concretos em África e além.",
-    eyebrow: "Sobre nós",
-    titlePrefix: "Sobre a",
-    intro:
-      "Estamos empenhados em oferecer consultoria de alto nível para apoiar empresas e instituições a alcançar os seus objetivos estratégicos. As nossas soluções, pensadas para os desafios atuais, visam maximizar o desempenho dos nossos clientes e, ao mesmo tempo, criar valor sustentável.",
+    metaDescription: "Quem é a GCG? Um grupo africano virado para o mundo: consultoria, desenvolvimento comercial e investimento, com presença nos Camarões e no Ruanda.",
+    eyebrow: "Quem é a GCG?",
+    title: "Um grupo africano virado para o mundo",
+    intro: [
+      "A General Consulting Group é um grupo de consultoria, desenvolvimento comercial e investimento sediado em África, com presença nos Camarões e no Ruanda e uma rede internacional de parceiros.",
+      "Ajudamos os nossos clientes a identificar oportunidades, entrar em novos mercados, desenvolver as suas atividades e transformar os seus projetos em resultados concretos.",
+    ],
     leadership: "Liderança",
-    founderRole: "Fundador e CEO",
+    founderRole: "Fundador e Diretor-Geral",
     founderPhotoAlt: "Retrato de {name}, {role} da {company}",
-    founderBio1:
-      "{name} fundou a {company} com uma convicção simples: as empresas e instituições africanas merecem um parceiro que compreenda as realidades locais e saiba abrir-lhes portas para o resto do mundo.",
-    founderBio2:
-      "Lidera a estratégia do grupo e os seus negócios, da consultoria e do comércio internacional aos serviços digitais com a SoftsCreatix.",
+    founderBio: [
+      "À frente da {company}, {name} tem uma visão empreendedora assente no desenvolvimento de empresas, na criação de parcerias estratégicas e na ligação dos mercados africanos às oportunidades internacionais.",
+      "Empresário, dirigente e consultor, acompanha o desenvolvimento da GCG com uma abordagem orientada para a estratégia, o desenvolvimento comercial, o comércio internacional, a representação de empresas e a criação de novas oportunidades de negócio.",
+      "O seu percurso e a sua experiência em diferentes contextos africanos permitem-lhe compreender as realidades dos mercados locais, desenvolvendo ao mesmo tempo uma perspetiva internacional. A sua visão é construir um grupo africano capaz de ligar empresas, investidores, parceiros e mercados para além das fronteiras.",
+    ],
+    visionTitle: "Visão",
+    vision: "Construir um grupo africano capaz de criar ligações, desenvolver oportunidades e acompanhar as empresas de forma duradoura, para além das fronteiras.",
+    expertiseTitle: "Áreas de especialização",
+    expertise: [
+      "Consultoria estratégica e desenvolvimento empresarial",
+      "Desenvolvimento comercial e procura de oportunidades",
+      "Comércio internacional e ligação entre empresas",
+      "Representação e desenvolvimento de mercados",
+      "Parcerias estratégicas e expansão internacional",
+      "Tecnologia e soluções digitais através das empresas do Grupo",
+    ],
+    presenceTitle: "Presença e abertura internacional",
+    presence: [
+      "A General Consulting Group desenvolve as suas atividades a partir dos Camarões e do Ruanda, com a ambição de crescer e alargar a sua rede em África e a nível internacional.",
+      "Através das suas diferentes atividades e empresas, a GCG constrói progressivamente um ecossistema capaz de ligar empresas, mercados, tecnologias, talentos, produtos e oportunidades.",
+    ],
+    messageTitle: "A palavra do fundador",
+    message: "Acredito que a África não tem falta de talento, nem de ideias, nem de oportunidades. Precisa sobretudo de ligações sólidas, de estratégias adaptadas e de parceiros capazes de transformar ideias em resultados. É esta convicção que orienta a construção da General Consulting Group.",
     whyEyebrow: "Porquê escolher-nos",
     whyTitle: "Porquê escolher a General Consulting Group?",
     reasons: [
       {
-        title: "Colaboração",
-        text: "Destacamo-nos pela abordagem colaborativa, pela capacidade de adaptação e pelo compromisso de oferecer soluções à medida das necessidades específicas de cada cliente.",
+        title: "Uma presença na África Central e na África Oriental",
+        text: [
+          "A General Consulting Group SARL nos Camarões e a General Consulting Group Ltd no Ruanda são dirigidas pelo seu fundador, Patrick Junior Njambe II. Esta organização dá aos nossos clientes um interlocutor claramente identificado, uma tomada de decisão eficaz e uma visão coerente entre dois mercados estratégicos do continente africano.",
+        ],
       },
       {
-        title: "Equipa de especialistas",
-        text: "Ao trabalhar connosco, conta com uma equipa de especialistas dedicados, uma abordagem orientada para resultados e uma sólida experiência na gestão de projetos de grande impacto.",
+        title: "Um grupo juridicamente constituído",
+        text: [
+          "As nossas entidades estão oficialmente registadas nos respetivos países. Nos Camarões, a General Consulting Group SARL está inscrita no RCCM sob o n.º RC/DLA/2022/B/4336. No Ruanda, a General Consulting Group Ltd está registada no Rwanda Development Board sob o código 122882138.",
+          "As nossas relações comerciais assentam, assim, em estruturas legalmente constituídas, identificáveis e responsáveis pelos seus compromissos.",
+        ],
       },
       {
-        title: "Transformar ideias",
-        text: "A General Consulting Group dedica-se a transformar ideias em resultados concretos e a construir relações duradouras com os seus clientes, contribuindo positivamente para o desenvolvimento económico de África e além.",
+        title: "Uma especialização que acompanha os seus projetos do início ao fim",
+        text: [
+          "O nosso grupo reúne várias áreas complementares: consultoria internacional, recrutamento e mobilidade profissional, comércio internacional, tecnologias da informação, imobiliário, gestão de talentos e acompanhamento de empresas e investidores.",
+          "Esta complementaridade permite aos nossos clientes concentrar várias necessidades num único parceiro, nomeadamente ao instalarem-se ou ao crescerem em África.",
+        ],
+      },
+      {
+        title: "Um conhecimento concreto dos mercados africanos",
+        text: [
+          "A nossa presença nos Camarões e no Ruanda permite-nos atuar perto das realidades administrativas, comerciais e culturais da África Central e da África Oriental.",
+          "Acompanhamos assim as empresas e os investidores que pretendem identificar parceiros, aceder a novos mercados, encontrar talentos ou desenvolver as suas atividades nestas regiões.",
+        ],
+      },
+      {
+        title: "A integridade como base das nossas relações",
+        text: [
+          "A nossa abordagem assenta em quatro princípios: excelência, integridade, inovação e parceria duradoura.",
+          "Privilegiamos a construção de relações profissionais sólidas em vez de operações pontuais. Comprometemo-nos com clareza, avaliamos as possibilidades com realismo e comunicamos de forma transparente sobre o que pode ser alcançado antes de assumir qualquer compromisso.",
+        ],
       },
     ],
     approachEyebrow: "A nossa abordagem",
@@ -277,7 +326,7 @@ const pt: Dictionary = {
   },
 
   servicePages: {
-    eyebrow: "Serviços",
+    eyebrow: "As nossas áreas de negócio",
     whatWeDo: "O que fazemos",
     whyUs: "Porquê nós",
     ourMission: "A nossa missão",
@@ -343,7 +392,16 @@ const pt: Dictionary = {
       ],
     },
     importExport: {
-      title: "Importação e Exportação",
+      title: "Comércio internacional",
+      activitiesTitle: "As nossas atividades",
+      activities: [
+        "Importação / Exportação",
+        "Sourcing internacional",
+        "Pesquisa de fornecedores",
+        "Intermediação comercial",
+        "Logística e coordenação",
+        "Desenvolvimento de mercados",
+      ],
       intro:
         "Na General Consulting Group, pomos a nossa experiência diversificada ao serviço de um apoio estratégico que ajuda os nossos clientes a maximizar o seu potencial de crescimento e a alcançar os seus objetivos num ambiente em constante mudança. Com uma presença forte nos Camarões e no Ruanda e uma rede de parceiros internacionais, estamos idealmente posicionados para servir clientes de todos os setores.",
       sectionTitle: "Os nossos serviços",
@@ -450,17 +508,18 @@ const pt: Dictionary = {
     title: "Contacte-nos",
     description:
       "Oferecemos soluções estratégicas para ajudar empresas e instituições a alcançar os seus objetivos e a maximizar o seu desempenho.",
-    metaDescription: "Contacte a General Consulting Group em Kigali, no Ruanda: {email}.",
-    address: "KN 4 Av 22, Kigali - Ruanda",
-    location: "Morada",
+    metaDescription: "Contacte a General Consulting Group em Kigali (Ruanda) e em Duala (Camarões): {email}.",
+    addresses: ["KN 4 Av 22, Kigali — Ruanda", "Akwa, Duala — Camarões"],
+    location: "Os nossos escritórios",
     email: "E-mail",
     phone: "Telefone",
+    whatsapp: "WhatsApp (Camarões)",
     formTitle: "Envie-nos uma mensagem",
     formText: "Preencha o formulário abaixo e a nossa equipa entrará em contacto consigo.",
     form: {
       name: "O seu nome",
       email: "O seu e-mail",
-      service: "Serviço de interesse (opcional)",
+      service: "Área de interesse (opcional)",
       partnership: "Parceria",
       other: "Outro",
       subject: "Assunto da mensagem",
@@ -488,6 +547,7 @@ const pt: Dictionary = {
   legalPage: {
     translationNotice:
       "Esta tradução é fornecida por conveniência. Em caso de divergência, prevalece a versão em inglês.",
+    englishOnly: "Este documento está, por agora, disponível apenas em inglês.",
   },
 
   notFound: {

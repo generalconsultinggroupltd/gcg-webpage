@@ -166,7 +166,7 @@ const documents: LegalDocument[] = [
 
   doc("privacy-policy", "Sera ya Faragha", [
     h2("1. Sisi ni nani"),
-    p("General Consulting Group Ltd (\"GCG\", \"sisi\") ndiye msimamizi wa data binafsi zinazokusanywa kupitia tovuti hii. Ofisi yetu iko KN 4 Av 22, Kigali, Rwanda. Kwa swali lolote kuhusu data zako, tuandikie kupitia generalconsultinggroupltd@gmail.com."),
+    p("General Consulting Group Ltd (\"GCG\", \"sisi\") ndiye msimamizi wa data binafsi zinazokusanywa kupitia tovuti hii. Ofisi yetu iko KN 4 Av 22, Kigali, Rwanda. Kwa swali lolote kuhusu data zako, tuandikie kupitia contact@generalsconsultinggroups.com."),
     h2("2. Data tunazokusanya"),
     p("Tunakusanya tu kile unachochagua kututumia kupitia fomu ya mawasiliano:"),
     list(
@@ -196,7 +196,7 @@ const documents: LegalDocument[] = [
       "Kupinga au kuzuia matumizi yake, na kuondoa idhini yako wakati wowote.",
       "Kuwasilisha malalamiko kwa National Cyber Security Authority (NCSA) ya Rwanda au mamlaka ya ulinzi wa data ya nchi yako.",
     ),
-    p("Ili kutumia haki hizi, tuandikie kupitia generalconsultinggroupltd@gmail.com. Tunajibu ndani ya siku 30."),
+    p("Ili kutumia haki hizi, tuandikie kupitia contact@generalsconsultinggroups.com. Tunajibu ndani ya siku 30."),
     h2("7. Usalama"),
     p("Tunatumia miunganisho iliyosimbwa na tunaruhusu tu watu wanaohitaji kushughulikia ombi lako kufikia data zako."),
     h2("8. Mabadiliko"),

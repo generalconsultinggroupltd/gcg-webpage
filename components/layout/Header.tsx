@@ -36,11 +36,11 @@ export function Header() {
         scrolled ? "shadow-[0_8px_24px_-12px_rgb(0_0_0_/_0.6)]" : ""
       }`}
     >
-      <Container className="flex h-[76px] items-center justify-between gap-6">
+      <Container className="flex h-[76px] items-center justify-between gap-3 sm:gap-6">
         <Logo priority href={href("/")} label={t(dict.header.homeLink, { name: site.name })} />
 
         <nav aria-label={dict.header.mainNav} className="hidden lg:block">
-          <ul className="flex items-center gap-9">
+          <ul className="flex items-center gap-6 xl:gap-9">
             {navigation.map((item) => {
               const active = isActive(pathname, item.href);
               return (
@@ -66,7 +66,7 @@ export function Header() {
           </ul>
         </nav>
 
-        <div className="flex items-center gap-2">
+        <div className="flex shrink-0 items-center gap-1 sm:gap-2">
           <LanguageSwitcher />
           <button
             type="button"

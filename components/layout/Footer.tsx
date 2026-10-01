@@ -56,7 +56,9 @@ export async function Footer() {
                 <span className="h-5 w-px bg-white/20" aria-hidden />
               </>
             )}
-            <LanguageSwitcher />
+            {/* Opens upwards; left-aligned on phones, where the switcher sits at the
+                start of the row, and right-aligned on desktop. */}
+            <LanguageSwitcher menuPosition="bottom-full mb-2 start-0 lg:start-auto lg:end-0" />
           </div>
         </div>
       </Container>

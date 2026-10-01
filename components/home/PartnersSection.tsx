@@ -7,7 +7,7 @@ export async function PartnersSection() {
   const { dict } = await getDict();
   return (
     <section className="py-16 sm:py-20">
-      <Container className="grid gap-10 lg:grid-cols-[minmax(0,_1fr)_1.4fr] lg:items-center">
+      <Container className="grid grid-cols-[minmax(0,_1fr)] gap-10 lg:grid-cols-[minmax(0,_1fr)_1.4fr] lg:items-center">
         <SectionHeading
           eyebrow={dict.partners.eyebrow}
           title={dict.partners.title}

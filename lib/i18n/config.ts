@@ -3,7 +3,7 @@
  * under /{lang} (e.g. /fr/about); proxy.ts sends unprefixed URLs to the
  * visitor's language. The /admin dashboard is not translated.
  */
-export const locales = ["en", "fr", "ar", "sw", "pt"] as const;
+export const locales = ["en", "fr", "es", "de", "it", "pt", "ru", "ar", "sw", "zh", "ja"] as const;
 export type Locale = (typeof locales)[number];
 
 /** English is the source every other dictionary is translated from. */
@@ -30,6 +30,12 @@ export const localeMeta: Record<
   ar: { label: "العربية", dir: "rtl", intl: "ar-u-nu-latn", og: "ar_AR" },
   sw: { label: "Kiswahili", dir: "ltr", intl: "sw-KE", og: "sw_KE" },
   pt: { label: "Português", dir: "ltr", intl: "pt-PT", og: "pt_PT" },
+  es: { label: "Español", dir: "ltr", intl: "es-ES", og: "es_ES" },
+  de: { label: "Deutsch", dir: "ltr", intl: "de-DE", og: "de_DE" },
+  it: { label: "Italiano", dir: "ltr", intl: "it-IT", og: "it_IT" },
+  ru: { label: "Русский", dir: "ltr", intl: "ru-RU", og: "ru_RU" },
+  zh: { label: "中文", dir: "ltr", intl: "zh-CN", og: "zh_CN" },
+  ja: { label: "日本語", dir: "ltr", intl: "ja-JP", og: "ja_JP" },
 };
 
 export function hasLocale(value: string | undefined | null): value is Locale {

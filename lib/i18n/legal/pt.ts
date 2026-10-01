@@ -166,7 +166,7 @@ const documents: LegalDocument[] = [
 
   doc("privacy-policy", "Política de Privacidade", [
     h2("1. Quem somos"),
-    p("A General Consulting Group Ltd («GCG», «nós») é a responsável pelo tratamento dos dados pessoais recolhidos através deste site. O nosso escritório fica em KN 4 Av 22, Kigali, Ruanda. Para qualquer questão sobre os seus dados, escreva para generalconsultinggroupltd@gmail.com."),
+    p("A General Consulting Group Ltd («GCG», «nós») é a responsável pelo tratamento dos dados pessoais recolhidos através deste site. O nosso escritório fica em KN 4 Av 22, Kigali, Ruanda. Para qualquer questão sobre os seus dados, escreva para contact@generalsconsultinggroups.com."),
     h2("2. Os dados que recolhemos"),
     p("Recolhemos apenas o que decide enviar-nos através do formulário de contacto:"),
     list(
@@ -196,7 +196,7 @@ const documents: LegalDocument[] = [
       "Opor-se ao seu tratamento ou pedir a sua limitação, e retirar o seu consentimento a qualquer momento.",
       "Apresentar uma reclamação à National Cyber Security Authority (NCSA) do Ruanda ou à autoridade de proteção de dados do seu país.",
     ),
-    p("Para exercer estes direitos, escreva para generalconsultinggroupltd@gmail.com. Respondemos no prazo de 30 dias."),
+    p("Para exercer estes direitos, escreva para contact@generalsconsultinggroups.com. Respondemos no prazo de 30 dias."),
     h2("7. Segurança"),
     p("Usamos ligações encriptadas e limitamos o acesso aos seus dados às pessoas que precisam deles para tratar o seu pedido."),
     h2("8. Alterações"),

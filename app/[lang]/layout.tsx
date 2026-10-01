@@ -56,12 +56,20 @@ export default async function SiteLayout({ children, params }: LayoutProps<"/[la
     slogan: dict.meta.slogan,
     email: site.contact.email,
     telephone: site.contact.phones[0],
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "KN 4 Av 22",
-      addressLocality: "Kigali",
-      addressCountry: "RW",
-    },
+    address: [
+      {
+        "@type": "PostalAddress",
+        streetAddress: "KN 4 Av 22",
+        addressLocality: "Kigali",
+        addressCountry: "RW",
+      },
+      {
+        "@type": "PostalAddress",
+        streetAddress: "Akwa",
+        addressLocality: "Douala",
+        addressCountry: "CM",
+      },
+    ],
     founder: { "@type": "Person", name: site.founder.name, jobTitle: site.founder.role },
     areaServed: ["Rwanda", "Cameroon", "Africa"],
     sameAs: site.social.map((item) => item.href).filter((href) => href !== "#"),

@@ -5,6 +5,7 @@ import { PageHero } from "@/components/ui/PageHero";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ContentBlocks } from "@/components/services/ContentBlocks";
 import { ServiceCta } from "@/components/services/ServiceCta";
+import { CheckIcon } from "@/components/ui/Icons";
 import { reveal } from "@/lib/motion";
 import { getDictionary, hasLocale } from "@/lib/i18n";
 import { getDict } from "@/lib/i18n/server";
@@ -32,6 +33,25 @@ export default async function ImportExportPage() {
         title={page.title}
         description={page.intro}
       />
+
+      {/* The branch's activities at a glance. */}
+      <section className="border-b border-line bg-white py-10 sm:py-12">
+        <Container>
+          <h2 className="font-serif text-2xl font-semibold text-navy-950">{page.activitiesTitle}</h2>
+          <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {page.activities.map((activity, index) => (
+              <li
+                key={activity}
+                className="flex items-center gap-3 rounded-md bg-cream px-4 py-3"
+                {...reveal(index % 3)}
+              >
+                <CheckIcon className="h-5 w-5 shrink-0 text-gold-600" />
+                <span className="font-medium text-ink">{activity}</span>
+              </li>
+            ))}
+          </ul>
+        </Container>
+      </section>
 
       <section className="py-16 sm:py-20">
         <Container>

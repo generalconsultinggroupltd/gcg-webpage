@@ -5,8 +5,7 @@ import type { Dictionary } from "../index";
 const sw: Dictionary = {
   meta: {
     homeTitle: "General Consulting Group — Kujenga Thamani. Kuleta Matokeo.",
-    description:
-      "General Consulting Group hutoa ushauri wa kimkakati, ubunifu na suluhisho za maendeleo ya kimataifa ili kusaidia makampuni na taasisi kufikia malengo yao na kujenga thamani endelevu.",
+    description: "General Consulting Group hutoa ushauri wa kimkakati, ubunifu na suluhisho za maendeleo ya kimataifa ili kukuza biashara, kuunganisha masoko na kuunda fursa mpya.",
     keywords: [
       "ushauri wa kimkakati",
       "uagizaji na usafirishaji",
@@ -23,7 +22,7 @@ const sw: Dictionary = {
   nav: {
     home: "Nyumbani",
     about: "Kuhusu Sisi",
-    services: "Huduma",
+    services: "Matawi Yetu",
     partners: "Washirika",
     gallery: "Picha",
     contact: "Wasiliana",
@@ -44,10 +43,11 @@ const sw: Dictionary = {
     backToTop: "Rudi juu",
     contactUs: "Wasiliana nasi",
     getInTouch: "Wasiliana nasi",
-    allServices: "Huduma zote",
+    allServices: "Matawi yote",
     visitWebsite: "Tembelea tovuti",
     opensInNewTab: "{name} (inafunguka kwenye kichupo kipya)",
     close: "Funga",
+    quote: "“{text}”",
   },
 
   footer: {
@@ -76,17 +76,18 @@ const sw: Dictionary = {
   },
 
   hero: {
-    pillars: ["Mkakati", "Ubunifu", "Matokeo Endelevu"],
+    pillars: ["Ushauri", "Ukuzaji wa biashara", "Biashara ya kimataifa", "Teknolojia", "Uwakilishi"],
     titleLine1: "Kujenga Thamani.",
     titleLine2: "Kuleta Matokeo.",
-    text: "{name} hutoa ushauri wa kimkakati, ubunifu na suluhisho za maendeleo ya kimataifa ili kusaidia makampuni na taasisi kufikia malengo yao na kujenga thamani endelevu.",
+    text: "{name} hutoa ushauri wa kimkakati, ubunifu na suluhisho za maendeleo ya kimataifa ili kukuza biashara, kuunganisha masoko na kuunda fursa mpya.",
+    text2: "Tunasaidia makampuni, taasisi na wawekezaji katika maendeleo yao barani Afrika na kimataifa, kuanzia mkakati hadi utekelezaji.",
     discover: "Ifahamu GCG",
-    ourServices: "Huduma Zetu",
+    ourServices: "Matawi Yetu",
     tagline: "Afrika na dunia pamoja kwa kesho bora",
   },
 
   services: {
-    eyebrow: "Huduma Zetu",
+    eyebrow: "Matawi Yetu",
     title: "Suluhisho kwa Kesho Pana Zaidi",
     description:
       "Tunatoa huduma mbalimbali zilizoundwa kusaidia ukuaji wako, kurahisisha fursa za kimataifa na kujenga thamani ya kudumu.",
@@ -98,7 +99,7 @@ const sw: Dictionary = {
         summary: "Ushauri wa kimkakati na suluhisho mahususi kukusaidia kufikia malengo yako.",
       },
       "import-export": {
-        name: "Uagizaji na Usafirishaji",
+        name: "Biashara ya Kimataifa",
         summary: "Kurahisisha biashara ya kimataifa na fursa za dunia.",
       },
       representation: {
@@ -217,33 +218,75 @@ const sw: Dictionary = {
 
   about: {
     metaTitle: "Kuhusu Sisi",
-    metaDescription:
-      "Ifahamu General Consulting Group: timu inayoshirikiana na kulenga matokeo, inayogeuza mawazo kuwa matokeo halisi barani Afrika na kwingineko.",
-    eyebrow: "Kuhusu sisi",
-    titlePrefix: "Kuhusu",
-    intro:
-      "Tumejitolea kutoa utaalamu wa ushauri wa kiwango cha juu ili kusaidia biashara na taasisi kufikia malengo yao ya kimkakati. Suluhisho zetu, zilizoundwa kukabili changamoto za sasa, zinalenga kuongeza ufanisi wa wateja wetu huku zikijenga thamani endelevu.",
+    metaDescription: "GCG ni nani? Kundi la Kiafrika lenye mtazamo wa kimataifa: ushauri, ukuzaji wa biashara na uwekezaji, likiwa na uwepo nchini Kamerun na Rwanda.",
+    eyebrow: "GCG ni nani?",
+    title: "Kundi la Kiafrika lenye mtazamo wa kimataifa",
+    intro: [
+      "General Consulting Group ni kundi la ushauri, ukuzaji wa biashara na uwekezaji lenye makao yake barani Afrika, likiwa na uwepo nchini Kamerun na Rwanda na mtandao wa kimataifa wa washirika.",
+      "Tunawasaidia wateja wetu kutambua fursa, kuingia katika masoko mapya, kukuza shughuli zao na kugeuza miradi yao kuwa matokeo halisi.",
+    ],
     leadership: "Uongozi",
-    founderRole: "Mwanzilishi na Mkurugenzi Mtendaji",
+    founderRole: "Mwanzilishi na Mkurugenzi Mkuu",
     founderPhotoAlt: "Picha ya {name}, {role} wa {company}",
-    founderBio1:
-      "{name} alianzisha {company} akiwa na imani rahisi: biashara na taasisi za Kiafrika zinastahili mshirika anayeelewa hali halisi ya ndani na anayeweza kuzifungulia milango ya dunia nzima.",
-    founderBio2:
-      "Anaongoza mkakati wa kundi na miradi yake, kuanzia ushauri na biashara ya kimataifa hadi huduma za kidijitali kupitia SoftsCreatix.",
+    founderBio: [
+      "Akiwa kiongozi wa {company}, {name} ana maono ya kijasiriamali yanayojikita katika kukuza biashara, kujenga ushirikiano wa kimkakati na kuunganisha masoko ya Afrika na fursa za kimataifa.",
+      "Akiwa mjasiriamali, kiongozi na mshauri, anaongoza maendeleo ya GCG kwa mtazamo unaolenga mkakati, ukuzaji wa biashara, biashara ya kimataifa, uwakilishi wa makampuni na uundaji wa fursa mpya za biashara.",
+      "Historia na uzoefu wake katika mazingira mbalimbali ya Kiafrika vinamwezesha kuelewa hali halisi ya masoko ya ndani huku akijenga mtazamo wa kimataifa. Maono yake ni kujenga kundi la Kiafrika linaloweza kuunganisha biashara, wawekezaji, washirika na masoko kuvuka mipaka.",
+    ],
+    visionTitle: "Maono",
+    vision: "Kujenga kundi la Kiafrika linaloweza kuunda miunganisho, kukuza fursa na kusaidia biashara kwa muda mrefu, kuvuka mipaka.",
+    expertiseTitle: "Maeneo ya utaalamu",
+    expertise: [
+      "Ushauri wa kimkakati na ukuzaji wa makampuni",
+      "Ukuzaji wa biashara na utafutaji wa fursa",
+      "Biashara ya kimataifa na kuunganisha wafanyabiashara",
+      "Uwakilishi na ukuzaji wa masoko",
+      "Ushirikiano wa kimkakati na upanuzi wa kimataifa",
+      "Teknolojia na suluhisho za kidijitali kupitia kampuni za Kundi",
+    ],
+    presenceTitle: "Uwepo na mtazamo wa kimataifa",
+    presence: [
+      "General Consulting Group inaendesha shughuli zake kutoka Kamerun na Rwanda, ikiwa na lengo la kukua na kupanua mtandao wake barani Afrika na kimataifa.",
+      "Kupitia shughuli na kampuni zake mbalimbali, GCG inajenga hatua kwa hatua mfumo unaounganisha biashara, masoko, teknolojia, vipaji, bidhaa na fursa.",
+    ],
+    messageTitle: "Neno kutoka kwa mwanzilishi",
+    message: "Ninaamini kwamba Afrika haikosi vipaji, mawazo wala fursa. Inachohitaji zaidi ni miunganisho imara, mikakati inayofaa na washirika wenye uwezo wa kugeuza mawazo kuwa matokeo. Imani hii ndiyo inayoongoza ujenzi wa General Consulting Group.",
     whyEyebrow: "Kwa nini utuchague",
     whyTitle: "Kwa nini uchague General Consulting Group?",
     reasons: [
       {
-        title: "Ushirikiano",
-        text: "Tunajitofautisha kwa mtindo wetu wa kushirikiana, uwezo wa kubadilika na kujitolea kutoa suluhisho mahususi zinazokidhi mahitaji ya kila mteja.",
+        title: "Uwepo katika Afrika ya Kati na Mashariki",
+        text: [
+          "General Consulting Group SARL nchini Kamerun na General Consulting Group Ltd nchini Rwanda zinaongozwa na mwanzilishi wao, Patrick Junior Njambe II. Mpangilio huu unawapa wateja wetu mtu wa kuwasiliana naye anayejulikana wazi, maamuzi ya haraka na maono yanayolingana katika masoko mawili ya kimkakati ya bara la Afrika.",
+        ],
       },
       {
-        title: "Timu ya wataalamu",
-        text: "Unapofanya kazi nasi, unanufaika na timu ya wataalamu waliojitolea, mtazamo unaolenga matokeo, na uzoefu thabiti katika kusimamia miradi yenye matokeo makubwa.",
+        title: "Kundi lililosajiliwa kisheria",
+        text: [
+          "Kampuni zetu zimesajiliwa rasmi katika nchi zao. Nchini Kamerun, General Consulting Group SARL imesajiliwa chini ya RCCM RC/DLA/2022/B/4336. Nchini Rwanda, General Consulting Group Ltd imesajiliwa na Rwanda Development Board chini ya namba 122882138.",
+          "Kwa hiyo, mahusiano yetu ya kibiashara yanategemea taasisi zilizoundwa kisheria, zinazotambulika na zinazowajibika kwa ahadi zao.",
+        ],
       },
       {
-        title: "Kugeuza mawazo",
-        text: "General Consulting Group imejitolea kugeuza mawazo kuwa matokeo halisi na kujenga mahusiano ya kudumu na wateja wetu, huku ikichangia kwa njia chanya maendeleo ya kiuchumi ya Afrika na kwingineko.",
+        title: "Utaalamu unaosaidia miradi yako mwanzo hadi mwisho",
+        text: [
+          "Kundi letu linaleta pamoja nyanja kadhaa zinazokamilishana: ushauri wa kimataifa, uajiri na uhamaji wa kitaaluma, biashara ya kimataifa, teknolojia ya habari, mali isiyohamishika, usimamizi wa vipaji na usaidizi kwa makampuni na wawekezaji.",
+          "Ukamilishano huu unawawezesha wateja wetu kupeleka mahitaji kadhaa kwa mshirika mmoja, hasa wanapoanzisha au kukuza shughuli barani Afrika.",
+        ],
+      },
+      {
+        title: "Ujuzi halisi wa masoko ya Afrika",
+        text: [
+          "Uwepo wetu nchini Kamerun na Rwanda unatuweka karibu na hali halisi za kiutawala, kibiashara na kitamaduni za Afrika ya Kati na Mashariki.",
+          "Tunasaidia makampuni na wawekezaji wanaotaka kupata washirika, kufikia masoko mapya, kupata vipaji au kukuza shughuli zao katika kanda hizi.",
+        ],
+      },
+      {
+        title: "Uadilifu kama msingi wa mahusiano yetu",
+        text: [
+          "Mtazamo wetu unasimama juu ya kanuni nne: ubora, uadilifu, ubunifu na ushirikiano endelevu.",
+          "Tunapendelea kujenga mahusiano imara ya kitaaluma kuliko mikataba ya mara moja. Tunajitolea kwa uwazi, tunatathmini uwezekano kwa uhalisia na tunawasiliana kwa uwazi kuhusu kinachoweza kufikiwa kabla ya kutoa ahadi yoyote.",
+        ],
       },
     ],
     approachEyebrow: "Mbinu yetu",
@@ -276,7 +319,7 @@ const sw: Dictionary = {
   },
 
   servicePages: {
-    eyebrow: "Huduma",
+    eyebrow: "Matawi Yetu",
     whatWeDo: "Tunachofanya",
     whyUs: "Kwa nini sisi",
     ourMission: "Dhamira yetu",
@@ -342,7 +385,16 @@ const sw: Dictionary = {
       ],
     },
     importExport: {
-      title: "Uagizaji na Usafirishaji",
+      title: "Biashara ya Kimataifa",
+      activitiesTitle: "Shughuli zetu",
+      activities: [
+        "Uagizaji / Usafirishaji",
+        "Upatikanaji wa bidhaa kimataifa",
+        "Utafutaji wa wasambazaji",
+        "Kuunganisha wafanyabiashara",
+        "Lojistiki na uratibu",
+        "Ukuzaji wa masoko",
+      ],
       intro:
         "Katika General Consulting Group, tunatumia utaalamu wetu mpana kutoa msaada wa kimkakati unaowasaidia wateja wetu kufikia uwezo wao kamili wa ukuaji na malengo yao ya kibiashara katika mazingira yanayobadilika kila wakati. Tukiwa na uwepo imara Kamerun na Rwanda pamoja na mtandao wa washirika wa kimataifa, tuko katika nafasi nzuri ya kuhudumia wateja katika sekta zote.",
       sectionTitle: "Huduma Zetu",
@@ -449,17 +501,18 @@ const sw: Dictionary = {
     title: "Wasiliana nasi",
     description:
       "Tunatoa suluhisho za kimkakati kusaidia biashara na taasisi kufikia malengo yao na kuongeza ufanisi wao.",
-    metaDescription: "Wasiliana na General Consulting Group mjini Kigali, Rwanda: {email}.",
-    address: "KN 4 Av 22, Kigali - Rwanda",
-    location: "Mahali",
+    metaDescription: "Wasiliana na General Consulting Group mjini Kigali (Rwanda) na Douala (Kamerun): {email}.",
+    addresses: ["KN 4 Av 22, Kigali — Rwanda", "Akwa, Douala — Kamerun"],
+    location: "Ofisi zetu",
     email: "Barua pepe",
     phone: "Simu",
+    whatsapp: "WhatsApp (Kamerun)",
     formTitle: "Tutumie ujumbe",
     formText: "Jaza fomu iliyo hapa chini na timu yetu itawasiliana nawe.",
     form: {
       name: "Jina lako",
       email: "Barua pepe yako",
-      service: "Huduma unayoihitaji (si lazima)",
+      service: "Tawi unalolihitaji (si lazima)",
       partnership: "Ushirikiano",
       other: "Nyingine",
       subject: "Mada ya ujumbe wako",
@@ -487,6 +540,7 @@ const sw: Dictionary = {
   legalPage: {
     translationNotice:
       "Tafsiri hii imetolewa kwa urahisi wako. Ikiwa kuna tofauti yoyote, toleo la Kiingereza ndilo litakalozingatiwa.",
+    englishOnly: "Hati hii kwa sasa inapatikana kwa Kiingereza pekee.",
   },
 
   notFound: {

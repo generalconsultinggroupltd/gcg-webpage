@@ -10,13 +10,14 @@ const en = {
   meta: {
     homeTitle: "General Consulting Group — Building Value. Creating Impact.",
     description:
-      "General Consulting Group provides strategic consulting, innovation and international development solutions to help companies and institutions achieve their objectives and create sustainable value.",
+      "General Consulting Group provides strategic consulting, innovation and international development solutions to grow businesses, connect markets and create new opportunities.",
     keywords: [
       "strategic consulting",
+      "business development",
+      "international trade",
       "import-export",
-      "consulting",
       "representation",
-      "sustainable development",
+      "investment",
       "Rwanda",
       "Cameroon",
       "Africa",
@@ -27,7 +28,7 @@ const en = {
   nav: {
     home: "Home",
     about: "About",
-    services: "Services",
+    services: "Our Branches",
     partners: "Partners",
     gallery: "Gallery",
     contact: "Contact",
@@ -48,10 +49,12 @@ const en = {
     backToTop: "Back to top",
     contactUs: "Contact us",
     getInTouch: "Get in touch",
-    allServices: "All services",
+    allServices: "All branches",
     visitWebsite: "Visit website",
     opensInNewTab: "{name} (opens in a new tab)",
     close: "Close",
+    /** Quotation marks around a quote, in this language's style. */
+    quote: "“{text}”",
   },
 
   footer: {
@@ -80,29 +83,37 @@ const en = {
   },
 
   hero: {
-    pillars: ["Strategy", "Innovation", "Sustainable Impact"],
+    pillars: [
+      "Consulting",
+      "Business development",
+      "International trade",
+      "Technology",
+      "Representation",
+    ],
     titleLine1: "Building Value.",
     titleLine2: "Creating Impact.",
-    text: "{name} provides strategic consulting, innovation and international development solutions to help companies and institutions achieve their objectives and create sustainable value.",
+    text: "{name} provides strategic consulting, innovation and international development solutions to grow businesses, connect markets and create new opportunities.",
+    text2:
+      "We support companies, institutions and investors in their development in Africa and internationally, from strategy to execution.",
     discover: "Discover GCG",
-    ourServices: "Our Services",
+    ourServices: "Our Branches",
     tagline: "Africa and the world together for a better tomorrow",
   },
 
   services: {
-    eyebrow: "Our Services",
+    eyebrow: "Our Branches",
     title: "Solutions for a Wider Tomorrow",
     description:
-      "We offer a diverse range of services designed to support your growth, facilitate international opportunities and create lasting value.",
+      "Our branches cover a diverse range of activities designed to support your growth, facilitate international opportunities and create lasting value.",
     metaDescription:
-      "Consulting, import & export, representation, models & hostesses, SoftsCreatix, Penja Peppers and MyStay: the services and ventures of General Consulting Group.",
+      "Consulting, import & export, representation, models & hostesses, SoftsCreatix, Penja Peppers and MyStay: the branches and ventures of General Consulting Group.",
     items: {
       consulting: {
         name: "Consulting",
         summary: "Strategic advice and tailored solutions to help you achieve your goals.",
       },
       "import-export": {
-        name: "Import & Export",
+        name: "International Trade",
         summary: "Facilitating international trade and global opportunities.",
       },
       representation: {
@@ -222,34 +233,79 @@ const en = {
   about: {
     metaTitle: "About",
     metaDescription:
-      "Learn about General Consulting Group: a collaborative, results-driven team turning ideas into tangible outcomes across Africa and beyond.",
-    eyebrow: "About us",
-    titlePrefix: "About",
-    intro:
-      "We are committed to providing high-level consulting expertise to support businesses and institutions in achieving their strategic goals. Our solutions, designed to meet contemporary challenges, aim to maximize our clients' performance while creating sustainable value.",
+      "Who is GCG? An African group with an international outlook: consulting, business development and investment, with a presence in Cameroon and Rwanda.",
+    eyebrow: "Who is GCG?",
+    title: "An African group with an international outlook",
+    intro: [
+      "General Consulting Group is a consulting, business development and investment group based in Africa, with a presence in Cameroon and Rwanda and an international network of partners.",
+      "We help our clients identify opportunities, enter new markets, grow their business and turn their projects into concrete results.",
+    ],
     leadership: "Leadership",
-    founderRole: "Founder & CEO",
+    founderRole: "Founder & Managing Director",
     founderPhotoAlt: "Portrait of {name}, {role} of {company}",
-    founderBio1:
-      "{name} founded {company} with a simple conviction: African businesses and institutions deserve a partner that understands local realities and can open doors to the rest of the world.",
-    founderBio2:
-      "He leads the group’s strategy and its ventures, from consulting and international trade to digital services with SoftsCreatix.",
+    founderBio: [
+      "As head of {company}, {name} carries an entrepreneurial vision built on growing businesses, creating strategic partnerships and connecting African markets to international opportunities.",
+      "An entrepreneur, executive and consultant, he leads the development of GCG with an approach focused on strategy, business development, international trade, company representation and the creation of new business opportunities.",
+      "His background and experience in different African settings allow him to understand the realities of local markets while building an international perspective. His vision is to build an African group able to connect businesses, investors, partners and markets across borders.",
+    ],
+    visionTitle: "Vision",
+    vision:
+      "To build an African group able to create connections, develop opportunities and support businesses for the long term, across borders.",
+    expertiseTitle: "Areas of expertise",
+    expertise: [
+      "Strategic consulting and business development",
+      "Commercial development and opportunity sourcing",
+      "International trade and business matchmaking",
+      "Representation and market development",
+      "Strategic partnerships and international expansion",
+      "Technology and digital solutions through the Group’s companies",
+    ],
+    presenceTitle: "Presence & international outlook",
+    presence: [
+      "General Consulting Group operates from Cameroon and Rwanda, with the ambition of growing and extending its network across Africa and internationally.",
+      "Through its different activities and companies, GCG is steadily building an ecosystem that connects businesses, markets, technologies, talent, products and opportunities.",
+    ],
+    messageTitle: "A word from the founder",
+    message:
+      "I believe that Africa lacks neither talent, nor ideas, nor opportunities. What it needs above all are strong connections, the right strategies and partners able to turn ideas into results. This conviction guides the building of General Consulting Group.",
     whyEyebrow: "Why choose us",
     whyTitle: "Why choose General Consulting Group?",
     reasons: [
       {
-        title: "Collaboration",
-        text: "We stand out for our collaborative approach, adaptability, and commitment to delivering tailored solutions that meet the specific needs of each client.",
+        title: "A presence in Central and East Africa",
+        text: [
+          "General Consulting Group SARL in Cameroon and General Consulting Group Ltd in Rwanda are both led by their founder, Patrick Junior Njambe II. This gives our clients a clearly identified point of contact, efficient decision-making and a consistent vision across two strategic markets of the African continent.",
+        ],
       },
       {
-        title: "Expert team",
-        text: "By working with us, you benefit from a team of dedicated experts, a results-oriented approach, and solid experience in managing high-impact projects.",
+        title: "A legally established group",
+        text: [
+          "Our entities are officially registered in their respective countries. In Cameroon, General Consulting Group SARL is registered under RCCM RC/DLA/2022/B/4336. In Rwanda, General Consulting Group Ltd is registered with the Rwanda Development Board under company code 122882138.",
+          "Our business relationships therefore rest on legally constituted structures that are identifiable and accountable for their commitments.",
+        ],
       },
       {
-        title: "Transforming ideas",
-        text: "General Consulting Group is dedicated to turning ideas into tangible results and building lasting relationships with our clients, while positively contributing to the economic development of Africa and beyond.",
+        title: "Expertise that supports your projects end to end",
+        text: [
+          "Our group brings together several complementary fields: international consulting, recruitment and professional mobility, international trade, information technology, real estate, talent management and support for companies and investors.",
+          "This complementarity lets our clients bring several needs to a single partner, especially when setting up or growing in Africa.",
+        ],
       },
-    ],
+      {
+        title: "Hands-on knowledge of African markets",
+        text: [
+          "Our presence in Cameroon and Rwanda keeps us close to the administrative, commercial and cultural realities of Central and East Africa.",
+          "We support companies and investors who want to find partners, access new markets, recruit talent or grow their business in these regions.",
+        ],
+      },
+      {
+        title: "Integrity as the foundation of our relationships",
+        text: [
+          "Our approach rests on four principles: excellence, integrity, innovation and lasting partnership.",
+          "We favour building strong professional relationships over one-off deals. We engage with clarity, assess possibilities realistically and communicate transparently about what can be achieved before making any commitment.",
+        ],
+      },
+    ] as Reason[],
     approachEyebrow: "Our approach",
     approachTitle: "How we work with you",
     approachText: "Every engagement is tailored, but most follow the same five steps.",
@@ -280,7 +336,7 @@ const en = {
   },
 
   servicePages: {
-    eyebrow: "Services",
+    eyebrow: "Our Branches",
     whatWeDo: "What we do",
     whyUs: "Why us",
     ourMission: "Our mission",
@@ -346,7 +402,16 @@ const en = {
       ] as ContentBlock[],
     },
     importExport: {
-      title: "Import & Export",
+      title: "International Trade",
+      activitiesTitle: "Our activities",
+      activities: [
+        "Import / Export",
+        "International sourcing",
+        "Supplier search",
+        "Business matchmaking",
+        "Logistics and coordination",
+        "Market development",
+      ],
       intro:
         "At General Consulting Group, we leverage our diverse expertise to provide strategic support that helps our clients maximize their growth potential and achieve their business goals in a constantly evolving environment. With a strong presence in Cameroon and Rwanda and a network of international partners, we are ideally positioned to serve our clients across sectors.",
       sectionTitle: "Our Services",
@@ -453,17 +518,18 @@ const en = {
     title: "Contact us",
     description:
       "We offer strategic solutions to help businesses and institutions achieve their goals and maximize their performance.",
-    metaDescription: "Contact General Consulting Group in Kigali, Rwanda: {email}.",
-    address: "KN 4 Av 22, Kigali - Rwanda",
-    location: "Location",
+    metaDescription: "Contact General Consulting Group in Kigali (Rwanda) and Douala (Cameroon): {email}.",
+    addresses: ["KN 4 Av 22, Kigali — Rwanda", "Akwa, Douala — Cameroon"],
+    location: "Our offices",
     email: "Email",
     phone: "Phone",
+    whatsapp: "WhatsApp (Cameroon)",
     formTitle: "Send us a message",
     formText: "Fill in the form below and our team will get back to you.",
     form: {
       name: "Your name",
       email: "Your email",
-      service: "Service of interest (optional)",
+      service: "Branch of interest (optional)",
       partnership: "Partnership",
       other: "Other",
       subject: "Subject of your message",
@@ -490,6 +556,7 @@ const en = {
   legalPage: {
     translationNotice:
       "This translation is provided for convenience. In case of any difference, the English version prevails.",
+    englishOnly: "This document is currently available in English only.",
   },
 
   notFound: {
@@ -500,5 +567,7 @@ const en = {
 };
 
 type ContentBlock = { title: string; text: string; points?: string[] };
+/** A "why choose us" reason; `text` is one or more paragraphs. */
+type Reason = { title: string; text: string[] };
 
 export default en;

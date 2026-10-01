@@ -36,6 +36,24 @@
   letter-spacing: normal;
 }
 
+/* Chinese and Japanese pages: the system's CJK fonts after Inter / Playfair,
+   which still draw the Latin brand names. Wide tracking spreads ideographs
+   apart, so it is dropped there too. */
+:root:lang(zh) {
+  --font-sans: var(--font-inter), "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-playfair), "Songti SC", "SimSun", "Noto Serif SC", ui-serif, Georgia, serif;
+}
+
+:root:lang(ja) {
+  --font-sans: var(--font-inter), "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", "Noto Sans JP", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-playfair), "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", ui-serif, Georgia, serif;
+}
+
+:lang(zh) [class*="tracking-"],
+:lang(ja) [class*="tracking-"] {
+  letter-spacing: normal;
+}
+
 html {
   scroll-behavior: smooth;
   /* Anchor targets land below the sticky header. */

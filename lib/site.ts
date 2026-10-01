@@ -3,15 +3,17 @@ export const site = {
   shortName: "GCG",
   legalName: "General Consulting Group Ltd",
   /** Public URL of the site; used for canonical links, sitemap and share cards. */
-  url: "https://generalconsultinggroups.com",
+  url: "https://generalsconsultinggroups.com",
   contact: {
-    email: "generalconsultinggroupltd@gmail.com",
+    email: "contact@generalsconsultinggroups.com",
     phones: ["+250 796 129 284", "+250 728 231 090"],
+    /** WhatsApp line of the Cameroon office. */
+    whatsapp: { display: "+237 688 528 283", href: "https://wa.me/237688528283" },
   },
   founder: {
-    name: "Njambe Patrick Junior",
+    name: "Patrick Junior Njambe II",
     /** English title, for search-engine data; pages show about.founderRole. */
-    role: "Founder & CEO",
+    role: "Founder & Managing Director",
     photo: "/owner.jpeg",
   },
   developer: { name: "SoftsCreatix", href: "https://softscreatix.com" },

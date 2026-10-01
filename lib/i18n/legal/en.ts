@@ -213,7 +213,7 @@ const privacyPolicy: LegalDocument = {
     { type: "h2", text: "1. Who we are" },
     {
       type: "p",
-      text: "General Consulting Group Ltd (\"GCG\", \"we\") is the controller of the personal data collected through this website. Our office is at KN 4 Av 22, Kigali, Rwanda. For any question about your data, write to generalconsultinggroupltd@gmail.com.",
+      text: "General Consulting Group Ltd (\"GCG\", \"we\") is the controller of the personal data collected through this website. Our office is at KN 4 Av 22, Kigali, Rwanda. For any question about your data, write to contact@generalsconsultinggroups.com.",
     },
     { type: "h2", text: "2. The data we collect" },
     { type: "p", text: "We only collect what you choose to send us through the contact form:" },
@@ -274,7 +274,7 @@ const privacyPolicy: LegalDocument = {
         "Lodge a complaint with the National Cyber Security Authority (NCSA) of Rwanda or your local data protection authority.",
       ],
     },
-    { type: "p", text: "To exercise these rights, email generalconsultinggroupltd@gmail.com. We reply within 30 days." },
+    { type: "p", text: "To exercise these rights, email contact@generalsconsultinggroups.com. We reply within 30 days." },
     { type: "h2", text: "7. Security" },
     {
       type: "p",
