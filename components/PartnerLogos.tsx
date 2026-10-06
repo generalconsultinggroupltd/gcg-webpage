@@ -2,12 +2,12 @@
 
 import Image from "next/image";
 import { useRef } from "react";
-import { partners } from "@/lib/partners";
+import { isUploaded, mediaUrl, type Partner } from "@/lib/api";
 import { ChevronLeftIcon, ChevronRightIcon } from "@/components/ui/Icons";
 import { useLocale } from "@/components/layout/LocaleProvider";
 
 /** Horizontal, scrollable strip of partner logos with prev/next controls. */
-export function PartnerLogos() {
+export function PartnerLogos({ partners }: { partners: Partner[] }) {
   const { dict, dir } = useLocale();
   const trackRef = useRef<HTMLUListElement>(null);
 
@@ -34,16 +34,19 @@ export function PartnerLogos() {
       >
         {partners.map((partner) => (
           <li
-            key={partner.name}
-            className="flex h-24 w-44 shrink-0 snap-start items-center justify-center rounded-lg bg-white p-4 ring-1 ring-line"
+            key={partner.id}
+            className="h-24 w-44 shrink-0 snap-start rounded-lg bg-white p-4 ring-1 ring-line"
           >
-            <Image
-              src={partner.logo}
-              alt={partner.name}
-              width={partner.width}
-              height={partner.height}
-              className="max-h-16 w-auto object-contain"
-            />
+            <span className="relative block h-full w-full">
+              <Image
+                src={mediaUrl(partner.logo_path)}
+                alt={partner.name}
+                unoptimized={isUploaded(partner.logo_path)}
+                fill
+                sizes="144px"
+                className="object-contain"
+              />
+            </span>
           </li>
         ))}
       </ul>

@@ -493,6 +493,7 @@ const ja: Dictionary = {
     metaDescription:
       "写真で見る私たちの成果：General Consulting Group の業務やミーティングの写真と動画。",
     open: "開く：{item}",
+    empty: "写真や動画はまだありません。また後ほどご覧ください。",
     items: [
       "General Consulting Group の作業セッション",
       "General Consulting Group の戦略会議",

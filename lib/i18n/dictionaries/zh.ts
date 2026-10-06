@@ -487,6 +487,7 @@ const zh: Dictionary = {
     metaDescription:
       "一览我们的成果：General Consulting Group 工作任务与工作会议的照片和视频。",
     open: "打开：{item}",
+    empty: "暂无照片或视频，敬请期待。",
     items: [
       "General Consulting Group 工作会议",
       "General Consulting Group 战略会议",

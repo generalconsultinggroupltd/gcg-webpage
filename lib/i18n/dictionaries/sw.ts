@@ -488,6 +488,7 @@ const sw: Dictionary = {
     metaDescription:
       "Tazama matokeo yetu: picha na video kutoka kwa kazi na vikao vya General Consulting Group.",
     open: "Fungua: {item}",
+    empty: "Bado hakuna picha wala video. Rudi hivi karibuni.",
     items: [
       "Kikao cha kazi cha General Consulting Group",
       "Mkutano wa mkakati wa General Consulting Group",

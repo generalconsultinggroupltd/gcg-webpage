@@ -2,17 +2,16 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import type { GalleryItem } from "@/lib/gallery";
+import { isUploaded, mediaUrl, type GalleryItem } from "@/lib/api";
 import { CloseIcon, PlayIcon } from "@/components/ui/Icons";
 import { reveal } from "@/lib/motion";
 import { t } from "@/lib/i18n/format";
 import { useLocale } from "@/components/layout/LocaleProvider";
 
-/** Photo/video grid with a simple full-screen viewer (as on the previous site). */
+/** Photo/video grid with captions and a simple full-screen viewer (as on
+ * the previous site). Items come from the API (managed in /admin). */
 export function GalleryGrid({ items }: { items: GalleryItem[] }) {
   const { dict } = useLocale();
-  // Descriptions are in the dictionary, at the same index as the media.
-  const altOf = (item: GalleryItem) => dict.gallery.items[items.indexOf(item)] ?? "";
   const [active, setActive] = useState<GalleryItem | null>(null);
 
   useEffect(() => {
@@ -32,17 +31,18 @@ export function GalleryGrid({ items }: { items: GalleryItem[] }) {
     <>
       <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {items.map((item, index) => (
-          <li key={item.src} {...reveal(index % 3)}>
+          <li key={item.id} {...reveal(index % 3)}>
             <button
               type="button"
               onClick={() => setActive(item)}
               className="group relative block aspect-[4/3] w-full overflow-hidden rounded-lg bg-navy-900 shadow-card ring-1 ring-line"
-              aria-label={t(dict.gallery.open, { item: altOf(item) })}
+              aria-label={t(dict.gallery.open, { item: item.description })}
             >
-              {item.type === "image" ? (
+              {item.media_type === "image" ? (
                 <Image
-                  src={item.src}
-                  alt={altOf(item)}
+                  src={mediaUrl(item.path)}
+                  alt={item.description}
+                  unoptimized={isUploaded(item.path)}
                   fill
                   sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -50,7 +50,7 @@ export function GalleryGrid({ items }: { items: GalleryItem[] }) {
               ) : (
                 <>
                   <video
-                    src={`${item.src}#t=0.1`}
+                    src={`${mediaUrl(item.path)}#t=0.1`}
                     muted
                     playsInline
                     preload="metadata"
@@ -64,6 +64,9 @@ export function GalleryGrid({ items }: { items: GalleryItem[] }) {
                 </>
               )}
             </button>
+            {item.description && (
+              <p className="mt-3 text-sm leading-relaxed text-muted">{item.description}</p>
+            )}
           </li>
         ))}
       </ul>
@@ -72,7 +75,7 @@ export function GalleryGrid({ items }: { items: GalleryItem[] }) {
         <div
           role="dialog"
           aria-modal="true"
-          aria-label={altOf(active)}
+          aria-label={active.description}
           data-lenis-prevent
           className="fixed inset-0 z-50 flex items-center justify-center bg-navy-950/95 p-4 sm:p-8"
           onClick={() => setActive(null)}
@@ -89,17 +92,18 @@ export function GalleryGrid({ items }: { items: GalleryItem[] }) {
             className="relative max-h-full w-full max-w-5xl"
             onClick={(event) => event.stopPropagation()}
           >
-            {active.type === "image" ? (
+            {active.media_type === "image" ? (
               <Image
-                src={active.src}
-                alt={altOf(active)}
+                src={mediaUrl(active.path)}
+                alt={active.description}
+                unoptimized={isUploaded(active.path)}
                 width={1080}
                 height={810}
                 className="mx-auto max-h-[85vh] w-auto rounded-lg object-contain"
               />
             ) : (
               <video
-                src={active.src}
+                src={mediaUrl(active.path)}
                 controls
                 autoPlay
                 playsInline

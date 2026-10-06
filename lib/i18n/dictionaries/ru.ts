@@ -500,6 +500,7 @@ const ru: Dictionary = {
     metaDescription:
       "Посмотрите наши результаты: фото и видео миссий и рабочих встреч General Consulting Group.",
     open: "Открыть: {item}",
+    empty: "Пока нет фотографий и видео. Загляните позже.",
     items: [
       "Рабочая встреча General Consulting Group",
       "Стратегическое совещание General Consulting Group",

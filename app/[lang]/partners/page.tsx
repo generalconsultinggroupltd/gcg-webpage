@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { partners } from "@/lib/partners";
+import { getPartners, isUploaded, mediaUrl } from "@/lib/api";
+import { fallbackPartners } from "@/lib/partners";
 import { Container } from "@/components/ui/Container";
 import { PageHero } from "@/components/ui/PageHero";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -21,6 +22,7 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/partners">
 export default async function PartnersPage() {
   const { dict, href } = await getDict();
   const copy = dict.partners;
+  const partners = (await getPartners()) ?? fallbackPartners;
   return (
     <>
       <PageHero
@@ -29,32 +31,40 @@ export default async function PartnersPage() {
         description={copy.description}
       />
 
+      {partners.length > 0 && (
       <section className="py-16 sm:py-20">
         <Container>
           <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {partners.map((partner, index) => (
               <li
-                key={partner.name}
+                key={partner.id}
                 {...reveal(index % 3)}
                 className="flex flex-col items-center rounded-lg bg-white p-8 shadow-card ring-1 ring-line"
               >
-                <div className="flex h-32 w-full items-center justify-center">
+                <div className="relative h-28 w-full">
                   <Image
-                    src={partner.logo}
+                    src={mediaUrl(partner.logo_path)}
                     alt={partner.name}
-                    width={partner.width}
-                    height={partner.height}
-                    className="max-h-28 w-auto object-contain"
+                    unoptimized={isUploaded(partner.logo_path)}
+                    fill
+                    sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 90vw"
+                    className="object-contain"
                   />
                 </div>
-                <h2 className="mt-6 font-serif text-lg font-semibold text-navy-950">
+                <h2 className="mt-6 text-center font-serif text-lg font-semibold text-navy-950">
                   {partner.name}
                 </h2>
+                {partner.description && (
+                  <p className="mt-2 text-center text-sm leading-relaxed text-muted">
+                    {partner.description}
+                  </p>
+                )}
               </li>
             ))}
           </ul>
         </Container>
       </section>
+      )}
 
       <section className="bg-navy-950 py-14 text-white">
         <Container className="flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:justify-between">

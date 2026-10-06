@@ -505,6 +505,7 @@ const en = {
     metaDescription:
       "Visualize our results: photos and videos from General Consulting Group missions and working sessions.",
     open: "Open: {item}",
+    empty: "No photos or videos yet. Come back soon.",
     items: [
       "General Consulting Group working session",
       "General Consulting Group strategy meeting",

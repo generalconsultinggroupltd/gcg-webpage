@@ -28,3 +28,56 @@ export async function getSiteStats(): Promise<SiteStats | null> {
     return null;
   }
 }
+
+/** A photo or video of the gallery, managed from /admin. */
+export type GalleryItem = {
+  id: number;
+  media_type: "image" | "video";
+  /** "/uploads/…" (served by the API) or a path in public/. */
+  path: string;
+  description: string;
+  created_at: string;
+  updated_at: string;
+};
+
+/** A partner shown on the home and partners pages, managed from /admin. */
+export type Partner = {
+  id: number;
+  name: string;
+  description: string;
+  /** "/uploads/…" (served by the API) or a path in public/. */
+  logo_path: string;
+  created_at: string;
+  updated_at: string;
+};
+
+/** True for files uploaded through the admin panel, which the API serves. */
+export const isUploaded = (path: string) => path.startsWith("/uploads/");
+
+/** Browser URL of a media path: uploads live on the API, the rest in
+ * public/. Uploads skip next/image optimisation (`unoptimized`): the API
+ * may sit on a private address, which the optimiser refuses to fetch. */
+export const mediaUrl = (path: string) => (isUploaded(path) ? `${API_URL}${path}` : path);
+
+/** How long a page keeps the gallery / partner list before asking the API
+ * again: an edit in /admin shows on the site within a minute. */
+const CONTENT_REVALIDATE = 60;
+
+async function getContent<T>(path: string): Promise<T[] | null> {
+  try {
+    const response = await fetch(`${API_URL}${path}`, { next: { revalidate: CONTENT_REVALIDATE } });
+    if (!response.ok) return null;
+    const body: { data?: T[] } = await response.json();
+    return body.data ?? null;
+  } catch {
+    return null;
+  }
+}
+
+/** The gallery, or null when the API can't be reached (callers then show
+ * the media shipped with the site, lib/gallery.ts). */
+export const getGallery = () => getContent<GalleryItem>("/api/gallery");
+
+/** The partners, or null when the API can't be reached (callers then show
+ * lib/partners.ts). */
+export const getPartners = () => getContent<Partner>("/api/partners");

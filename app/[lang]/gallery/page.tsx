@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { gallery } from "@/lib/gallery";
+import { getGallery } from "@/lib/api";
+import { fallbackGallery, translateShipped } from "@/lib/gallery";
 import { Container } from "@/components/ui/Container";
 import { PageHero } from "@/components/ui/PageHero";
 import { GalleryGrid } from "@/components/gallery/GalleryGrid";
@@ -17,6 +18,8 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/gallery">)
 export default async function GalleryPage() {
   const { dict } = await getDict();
   const copy = dict.gallery;
+  const live = await getGallery();
+  const items = live ? translateShipped(live, copy.items) : fallbackGallery(copy.items);
   return (
     <>
       <PageHero
@@ -30,7 +33,11 @@ export default async function GalleryPage() {
       />
       <section className="py-16 sm:py-20">
         <Container>
-          <GalleryGrid items={gallery} />
+          {items.length > 0 ? (
+            <GalleryGrid items={items} />
+          ) : (
+            <p className="py-12 text-center text-muted">{copy.empty}</p>
+          )}
         </Container>
       </section>
     </>

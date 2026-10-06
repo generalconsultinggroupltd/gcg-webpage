@@ -4,11 +4,11 @@ import { fontClasses } from "@/lib/fonts";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: `Statistics | ${site.name}`,
+  title: { default: `Admin | ${site.name}`, template: `%s | ${site.shortName} Admin` },
   robots: { index: false, follow: false },
 };
 
-/** Staff-only area, and its own root layout: outside the public site's
+/** Staff-only area (dashboard, gallery, partners, account), and its own root layout: outside the public site's
  * language routing (it stays in English), with none of its header, footer,
  * smooth scrolling or analytics tag. */
 export default function AdminLayout({ children }: LayoutProps<"/admin">) {

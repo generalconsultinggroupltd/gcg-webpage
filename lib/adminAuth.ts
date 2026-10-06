@@ -1,9 +1,9 @@
 "use client";
 
 /**
- * Admin session for the /admin statistics dashboard: the bearer token the
- * backend issues for the shared ADMIN_PASSWORD, kept in localStorage until
- * it expires, plus a fetch wrapper that attaches it and turns the API's
+ * Admin session for the /admin panel: the bearer token the backend issues
+ * for the admin's email and password, kept in localStorage until it
+ * expires, plus a fetch wrapper that attaches it and turns the API's
  * { data } / { error } answers into a value or a thrown Error.
  */
 import { API_URL } from "@/lib/api";
@@ -53,31 +53,58 @@ export function signOut() {
   setSession(null);
 }
 
-export async function signIn(password: string): Promise<void> {
-  const { token, expires_at } = await adminFetch<{ token: string; expires_at: string }>(
-    "/api/admin/login",
-    { method: "POST", json: { password } },
-  );
+/** What the API answers to a sign-in, and to an email or password change
+ * (which ends every other session and hands this one a fresh token). */
+export type IssuedToken = { token: string; expires_at: string };
+
+export function storeToken({ token, expires_at }: IssuedToken) {
   setSession({ token, expiresAt: new Date(expires_at).getTime() });
 }
 
-/** Fetch wrapper for every admin API call. A 401 ends the session, which
- * sends the page back to the sign-in form. */
+export async function signIn(email: string, password: string): Promise<void> {
+  storeToken(
+    await adminFetch<IssuedToken>("/api/admin/login", { method: "POST", json: { email, password } }),
+  );
+}
+
+/** Calls a public endpoint that answers { message } (forgot / reset
+ * password) and returns that message. */
+export async function publicPost(path: string, json: unknown): Promise<string> {
+  let response: Response;
+  try {
+    response = await fetch(`${API_URL}${path}`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(json),
+    });
+  } catch {
+    throw new Error("Cannot reach the server. Check that the API is running.");
+  }
+  const payload: { message?: string; error?: string } = await response.json().catch(() => ({}));
+  if (!response.ok) throw new Error(payload.error ?? "Something went wrong.");
+  return payload.message ?? "";
+}
+
+/** Fetch wrapper for every admin API call: `json` for JSON bodies, `form`
+ * for uploads (multipart). A 401 ends the session, which sends the page
+ * back to the sign-in form. */
 export async function adminFetch<T>(
   path: string,
-  options: { method?: string; json?: unknown } = {},
+  options: { method?: string; json?: unknown; form?: FormData } = {},
 ): Promise<T> {
   const headers: Record<string, string> = {};
   const token = getToken();
   if (token) headers.Authorization = `Bearer ${token}`;
   if (options.json !== undefined) headers["Content-Type"] = "application/json";
+  // For FormData the browser sets the multipart Content-Type and boundary.
+  const body = options.form ?? (options.json === undefined ? undefined : JSON.stringify(options.json));
 
   let response: Response;
   try {
     response = await fetch(`${API_URL}${path}`, {
       method: options.method ?? "GET",
       headers,
-      body: options.json === undefined ? undefined : JSON.stringify(options.json),
+      body,
     });
   } catch {
     throw new Error("Cannot reach the server. Check that the API is running.");

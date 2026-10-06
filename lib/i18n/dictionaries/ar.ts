@@ -485,6 +485,7 @@ const ar: Dictionary = {
       "نقدّم حلولاً استراتيجية لمساعدة الشركات والمؤسسات على تحقيق أهدافها ورفع أدائها إلى أقصى حد.",
     metaDescription: "شاهد نتائجنا: صور ومقاطع فيديو من مهام General Consulting Group وجلسات عملها.",
     open: "فتح: {item}",
+    empty: "لا توجد صور أو مقاطع فيديو حاليًا. عُد قريبًا.",
     items: [
       "جلسة عمل لـ General Consulting Group",
       "اجتماع استراتيجي لـ General Consulting Group",

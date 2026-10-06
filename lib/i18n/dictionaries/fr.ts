@@ -494,6 +494,7 @@ const fr: Dictionary = {
     metaDescription:
       "Découvrez nos résultats : photos et vidéos des missions et des séances de travail de General Consulting Group.",
     open: "Ouvrir : {item}",
+    empty: "Aucune photo ni vidéo pour le moment. Revenez bientôt.",
     items: [
       "Séance de travail de General Consulting Group",
       "Réunion stratégique de General Consulting Group",

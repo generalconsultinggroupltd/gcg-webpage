@@ -1,11 +1,14 @@
-export type Partner = {
-  name: string;
-  logo: string;
-  width: number;
-  height: number;
-};
+import type { Partner } from "@/lib/api";
 
-export const partners: Partner[] = [
-  { name: "Media Vision Academy", logo: "/partners/mva.png", width: 800, height: 319 },
-  { name: "Cathy - Nganje", logo: "/partners/nganje.jpg", width: 600, height: 600 },
-];
+/** The partners shipped with the site (public/partners/), shown when the
+ * API can't be reached. The live list is managed from /admin (lib/api.ts). */
+export const fallbackPartners: Partner[] = [
+  { name: "Media Vision Academy", logo_path: "/partners/mva.png" },
+  { name: "Cathy - Nganje", logo_path: "/partners/nganje.jpg" },
+].map((partner, index) => ({
+  id: -(index + 1),
+  description: "",
+  created_at: "",
+  updated_at: "",
+  ...partner,
+}));

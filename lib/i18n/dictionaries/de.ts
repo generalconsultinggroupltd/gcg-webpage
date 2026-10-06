@@ -500,6 +500,7 @@ const de: Dictionary = {
     metaDescription:
       "Entdecken Sie unsere Ergebnisse: Fotos und Videos von Einsätzen und Arbeitssitzungen der General Consulting Group.",
     open: "Öffnen: {item}",
+    empty: "Noch keine Fotos oder Videos. Schauen Sie bald wieder vorbei.",
     items: [
       "Arbeitssitzung der General Consulting Group",
       "Strategiebesprechung der General Consulting Group",
