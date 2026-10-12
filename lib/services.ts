@@ -27,6 +27,9 @@ export type Service = {
   icon: ServiceIcon;
   /** Card photo, from /public/services. */
   image: string;
+  /** Focal point of the photo in the wide card (CSS object-position);
+   * centred when omitted. */
+  imagePosition?: string;
   /** Internal route or external website. */
   href: string;
   external?: boolean;
@@ -56,7 +59,9 @@ export const services: Service[] = [
   },
   {
     slug: "models-hostesses",
-    image: "/services/models.jpg",
+    image: "/services/models-hostesses.jpeg",
+    // Portrait: keep the face in the short card, not the coat.
+    imagePosition: "50% 30%",
     name: "Models & Hostesses",
     icon: "hostesses",
     href: "https://modelshostesses.com",
